@@ -176,11 +176,11 @@
 // let studentAdress = getProperty(student, "address");
 // console.log(studentAdress); //undefined
 
-type Todo = {
-  title: string;
-  description: string;
-  completed: boolean;
-};
+// type Todo = {
+//   title: string;
+//   description: string;
+//   completed: boolean;
+// };
 
 // partial - дозволяє використовувати не всі поля обʼєкту
 // function updateTodo(todo: Todo, fieldsToUpdate: Partial<Todo>): Todo {
@@ -201,3 +201,24 @@ type Todo = {
 
 // метод PUT - обовязково прердати всі поля обʼєкту
 // метод PATCH - можна передати не всі поля обʼєкту
+
+// Readonly
+
+// type User = {
+//   name: string;
+//   age: number;
+//   hobby: string;
+
+//   updateAge: function(age:number): void {
+//   }
+// };
+
+// const john: Readonly<User> = {
+//   name: "John",
+//   age: 25,
+//   hobby: "football",
+//   updateAge(age: number): void {
+//     this.age = age;
+//   }
+
+// };
