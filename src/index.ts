@@ -156,7 +156,7 @@
 
 // console.log(lengthOfObject({ name: "Earth", count: 1000 }));
 
-// перевіряємо чи ключ є ключем нашого обʼєкту... для перевірки використовуємо extends умова
+//* перевіряємо чи ключ є ключем нашого обʼєкту... для перевірки використовуємо extends умова
 // function getProperty<ObjectType, Key extends keyof ObjectType>(
 //   obj: ObjectType,
 //   key: Key
@@ -182,7 +182,7 @@
 //   completed: boolean;
 // };
 
-// partial - дозволяє використовувати не всі поля обʼєкту
+//? partial - дозволяє використовувати не всі поля обʼєкту
 // function updateTodo(todo: Todo, fieldsToUpdate: Partial<Todo>): Todo {
 //   return { ...todo, ...fieldsToUpdate };
 // }
@@ -199,10 +199,10 @@
 
 // console.log(todo2);
 
-// метод PUT - обовязково прердати всі поля обʼєкту
-// метод PATCH - можна передати не всі поля обʼєкту
+//? метод PUT - обовязково прердати всі поля обʼєкту
+//? метод PATCH - можна передати не всі поля обʼєкту
 
-// Readonly
+//? Readonly- забороняє змінювати властивості обʼєкту
 
 // type User = {
 //   name: string;
@@ -222,3 +222,52 @@
 //   }
 
 // };
+
+//? pick - вибираємо з обʼєкту тільки ті властивості, які нам потрібні
+
+// type Person = {
+//   name: string;
+//   age: number;
+//   address: string;
+// };
+
+// type PersonSummary = Pick<Person, "name" | "age">;
+
+// const johnSummary: PersonSummary = {
+//   name: "John",
+//   age: 25,
+// };
+
+//? Omit  видаляє непотрібні властивості - ключі з обʼєкту
+// type Person = {
+//   name: string;
+//   age: number;
+//   address: string;
+// };
+
+// type PersonWithoutAddress = Omit<Person, "address">;
+
+// const john: PersonWithoutAddress = {
+//   name: "John",
+//   age: 25,
+// };
+
+//? Record - створює обʼєкт з ключами і значеннями.. cтворення довідника, колекції даних
+
+// type CityDatabase = Record<string, number> ;
+
+// const dataBase: CityDatabase = {
+//   Kyiv: 2884000,
+//   Kharkiv: 1441000,
+//   Odesa: 1015000,
+// }
+
+// databaseLviv = 721301; //error
+
+// ? Promise - обʼєкт, що представляє результат асинхронної операції
+
+// function getPromise(): Promise<(string | number)[]> {
+//   return new Promise<(string | number)[]>((resolve) => {
+//     resolve(["Hello", 100]);
+//   });
+// }
